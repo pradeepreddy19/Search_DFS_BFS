@@ -54,3 +54,5 @@ if __name__ == "__main__":
         print("Here's the solution I found:")
         print(str(solution[0]) + " " + solution[1])
 
+        print("Test Check")
+
