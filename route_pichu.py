@@ -2,7 +2,7 @@
 #
 # route_pichu.py : a maze solver
 #
-# Submitted by : [PUT YOUR NAME AND USERNAME HERE]
+# Submitted by : Pradeep Reddy Rokkam, prokkam@iu.edu, UID :2000766513
 #
 # Based on skeleton code provided in CSCI B551, Fall 2021.
 

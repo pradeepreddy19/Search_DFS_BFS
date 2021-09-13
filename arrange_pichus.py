@@ -2,7 +2,7 @@
 #
 # arrange_pichus.py : arrange agents on a grid, avoiding conflicts
 #
-# Submitted by : [PUT YOUR NAME AND USERNAME HERE]
+# Submitted by : Pradeep Reddy Rokkam, prokkam@iu.edu, UID :2000766513
 #
 # Based on skeleton code in CSCI B551, Fall 2021.
 
@@ -23,15 +23,41 @@ def printable_house_map(house_map):
 
 # Add a pichu to the house_map at the given position, and return a new house_map (doesn't change original)
 def add_pichu(house_map, row, col):
+    print(row,col,"Pradeep")
     return house_map[0:row] + [house_map[row][0:col] + ['p',] + house_map[row][col+1:]] + house_map[row+1:]
 
 # Get list of successors of given house_map state
 def successors(house_map):
-    return [ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) if house_map[r][c] == '.' ]
+    return [ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) 
+    if house_map[r][c] == '.' and ("p" not in house_map[r] ) and ("p" not in [row[c] for row in house_map]) 
+     and ("p" not in [house_map[i][j] for i,j in diagonal_squares(house_map,r,c) ] ) ]
 
 # check if house_map is a goal state
 def is_goal(house_map, k):
     return count_pichus(house_map) == k 
+
+# Get all sqaures tha are diagonal to the given cell 
+def diagonal_squares(house_map,r,c):
+    i=0
+    row=r
+    col=c
+    diag_elements=[]
+    while i<len(house_map):
+        a=row-i
+        print(i)
+        if i< row:
+            if  row-a>=0  and col-a>=0:
+                diag_elements.append((row-a,col-a))
+            if   row-a>=0  and col+a<len(house_map[0]):
+                diag_elements.append((row-a,col+a))
+        a=i-row
+        if i>row:
+            if  row+a<len(house_map)  and col-a>=0:
+                diag_elements.append((row+a,col-a))
+            if   row+a<len(house_map)  and col+a<len(house_map[0]):
+                diag_elements.append((row+a,col+a))
+        i+=1
+    return diag_elements
 
 # Arrange agents on the map
 #
@@ -42,8 +68,13 @@ def is_goal(house_map, k):
 #
 def solve(initial_house_map,k):
     fringe = [initial_house_map]
+    
     while len(fringe) > 0:
+        # print("Pradeep Reddy Rokkam")
+        # print(fringe)
         for new_house_map in successors( fringe.pop() ):
+            print(printable_house_map(new_house_map))
+            print("|*|"*50)
             if is_goal(new_house_map,k):
                 return(new_house_map,True)
             fringe.append(new_house_map)
