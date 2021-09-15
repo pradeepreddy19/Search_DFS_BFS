@@ -23,7 +23,7 @@ def printable_house_map(house_map):
 
 # Add a pichu to the house_map at the given position, and return a new house_map (doesn't change original)
 def add_pichu(house_map, row, col):
-    print(row,col,"Pradeep")
+    # print(row,col,"Pradeep")
     return house_map[0:row] + [house_map[row][0:col] + ['p',] + house_map[row][col+1:]] + house_map[row+1:]
 
 # Get list of successors of given house_map state
@@ -32,16 +32,38 @@ def add_pichu(house_map, row, col):
 #     if house_map[r][c] == '.' and ("p" not in house_map[r] ) and ("p" not in [row[c] for row in house_map]) 
 #      and ("p" not in [house_map[i][j] for i,j in diagonal_squares(house_map,r,c) ] ) ]
 
-# Slight modification to the scuccessor function to check whether a given 
+# Slight modification to the scuccessor function to check whether a given sqaure is a legal square or not,
+
 
 def successors(house_map):
-    print([ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) 
-    if house_map[r][c] == '.' and legal_square(house_map,r,c) ])
+    # print([ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) 
+    # if house_map[r][c] == '.' and legal_square(house_map,r,c) ])
     return [ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) 
     if house_map[r][c] == '.' and legal_square(house_map,r,c) ]
 
+# A slight modificaation to the successor function which will give return only the first housemap once we can 
+# fit in the pichu in map
+# Note: However this could not be the best legal square a pichu can be placed, however we will arrive the 
+#      solution in faster way
+
+# def successors(house_map):
+
+
+#     # print([ add_pichu(house_map, r, c) for r in range(0, len(house_map)) for c in range(0,len(house_map[0])) 
+#     # if house_map[r][c] == '.' and legal_square(house_map,r,c) ])
+
+#     # The older code gives all possible successors where a pichu can be placed at for the given map.
+#     # However, the following code breaks out of the loop and will return only one sucessor map where a pichu can 
+#     # be placed at for the given map
+#     for r in range(0, len(house_map)):
+#         for c in range(0,len(house_map[0])):
+#             if house_map[r][c] == '.' and legal_square(house_map,r,c):
+#                 return [add_pichu(house_map, r, c)]
+#     return []
+
+
 #Return if a given square  of the given map is a legal one or not for adding a new pichu
-# The logic to find the legal square is that from a given square I move in all 8 directions till I reach a P or an obstacle or end of the map in that direction. For any 1 direction out of 8 directions, if I hit a P before 'X'  or '@' then its not a legal square to place a new pichu
+# The logic to find the legal square is that from a given square is to move in all 8 directions till I reach a P or an obstacle or agent or end of the map in that direction. For any 1 direction out of 8 directions, if I hit a P before 'X'  or '@' then its not a legal square to place a new pichu
 def legal_square(house_map,row,col):
     direction={"N":(-1,0),"NE":(-1,1),"E":(0,1),"SE":(1,1),"S":(1,0),"SW":(1,-1),"W":(0,-1),"NW":(-1,-1)}
     for i in direction:
@@ -107,13 +129,15 @@ def solve(initial_house_map,k):
         
         for new_house_map in successors( fringe.pop() ):
             pichu_current=0
+
             #counting the number of pichus in the current map 
             for i in new_house_map:
                 for j in i:
                     if j=="p":
                         pichu_current=pichu_current+1
 
-            print("Count of pichus is {}".format(pichu_current)) # printing the number of pichus
+            # print("Count of pichus is {}".format(pichu_current)) # printing the number of pichus
+            print(pichu_current, end=" ")
             # print(printable_house_map(new_house_map))
             # print("|*|"*50)
             if is_goal(new_house_map,k):
@@ -121,9 +145,11 @@ def solve(initial_house_map,k):
             fringe.append(new_house_map)
         
         max_pichu= max(max_pichu,pichu_current)
-        print(max_pichu,pichu_current)
-        if pichu_current<max_pichu:
-                return ([],False)
+        # print(max_pichu,pichu_current)
+        # if pichu_current<max_pichu:
+        #         return ([],False)
+        # print("The length of the fringe is {}".format(len(fringe)))
+    return ([],False)
 
 
 

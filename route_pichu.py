@@ -47,28 +47,28 @@ def direction(current_move,future_move):
 def search(house_map):
         # Find pichu start position
         pichu_loc=[(row_i,col_i) for col_i in range(len(house_map[0])) for row_i in range(len(house_map)) if house_map[row_i][col_i]=="p"][0]
-        fringe=[(pichu_loc,0,"")] 
+        fringe=[(pichu_loc,0,"")] # Made a small change to the fringe, where we add a path from to reach to that node from initial node
         print(fringe) #dummy
 
         visited_nodes=[pichu_loc]
 
-        i=100
+        # i=100 # A dummy varible i, where we break out of the loop after 100 iterations
 
         while fringe:
-                if i<0:
-                        break 
-                print(i)
-                print("\n")
-                (curr_move, curr_dist, dirctn)=fringe.pop()
+                # if i<0:
+                #         break 
+                # print(i)
+                # print("\n")
+                (curr_move, curr_dist, dirctn)=fringe.pop() 
                 # print("Current move is {}".format(curr_move))
                 # print("For the current move {} the following are the possible moves".format(curr_move))
                 for move in moves(house_map, *curr_move):
                         # print(move)
-                        i=i-1
+                        # i=i-1
                         if house_map[move[0]][move[1]]=="@":
                                 print("Goal Reached {}".format(curr_dist+1))
                                 d= direction(curr_move,move)
-                                return (curr_dist+1, dirctn+d)  # return a dummy answer
+                                return (curr_dist+1, dirctn+d)  # return the answer distance and the path
                         else:
                                 if move not in visited_nodes:
                                         d= direction(curr_move,move)
