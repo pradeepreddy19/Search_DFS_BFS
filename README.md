@@ -1,7 +1,7 @@
 # a0
-Name: Pradeep Reddy Rokkam
+*Name: Pradeep Reddy Rokkam
 UID: 2000766513
-Assignment 0 (Elements of Artificial Intelligence)
+Assignment 0 (Elements of Artificial Intelligence)*
 
 ## Problem 1:Route Pichu
 
