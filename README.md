@@ -63,7 +63,9 @@ For this particular logic, I think this will give solution for whatever map we g
 	* The logic to check whether a given square is legal to place a pichu is as follows:
 		* From the given square which is “.” We move in all 8 directions that are N, E, S, W, NE, NW, SE, SW.  and for any one of these 8 directions if we meet a pichu before an obstacle” X” or “@”, or meet a pichu before we reach the end of the map (i.e. we can’t proceed any further in that direction) then that square is NOT LEGAL to insert a new pichu. In case we don’t meet any pichu in any of these 8 directions then that square is LEGAL to insert a new pichu.
 
-* The only problem with this approach could be since it is a blind search if we have bigger map, then we may have a much bigger branching factor and we may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with the bigger maps without running the codes for a longer time.
+#### What could be improved
+
+The only problem with this approach could be since it is a blind search if we have bigger map, then we may have a much bigger branching factor and we may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with the bigger maps without running the codes for a longer time.
 
 
 
