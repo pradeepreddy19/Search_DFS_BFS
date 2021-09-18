@@ -24,8 +24,8 @@ i.	E.g., If a solution has a cost of 5 means that our pichu must move 5 times fr
 ### Algorithm 
 
 Let’s talk about the algorithm, here we are making use of fringe data structure (using stack) to solve the problem:
-	The algorithm is often giving us the wrong solution because it is getting caught in an infinite loop and this loop is occurring at the cells (2,2) and (2,3). After a certain point, our agent is only oscillating between these two squares (because our fringe is guiding the agent to do so). Since we are using a stack here, I think we are applying Depth First Search which is not a complete algorithm i.e. It does not guarantee a solution even if one exists.
-	However, replacing stack to queue for implementing a fringe doesn’t solve the problem as well. Even with the fringe based on queue, it is still getting caught up in the infinite loop.  
+	* The algorithm is often giving us the wrong solution because it is getting caught in an infinite loop and this loop is occurring at the cells (2,2) and (2,3). After a certain point, our agent is only oscillating between these two squares (because our fringe is guiding the agent to do so). Since we are using a stack here, I think we are applying Depth First Search which is not a complete algorithm i.e. It does not guarantee a solution even if one exists.
+	* However, replacing stack to queue for implementing a fringe doesn’t solve the problem as well. Even with the fringe based on queue, it is still getting caught up in the infinite loop.  
 
 
 
