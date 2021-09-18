@@ -12,7 +12,7 @@ a.	All the possible states are the positions our pichu could take
 i.	In this scenario, our set of states would be all different nodes where our pichu could take a position legally (‘.’,’@’,’p’)
 ##### 2)	Initial State S0:
 a.	The node that was given in the initial state, in this case where pichu is in the cell or square (5,0) 
-##### 3)	A function of SUCC: S   encodes possible transitions of the system
+##### 3)	A function of SUCC: S -->  encodes possible transitions of the system
 a.	For a given cell where a pichu is at, the successor function gives all the possible squares our pichu can legally move in all compass directions (N, S, E & W) or (L, R, D, and U for left, right, down, and up) 
 #### 4)	Set of Goal States:
 a.	Here we have only one goal state which is ‘@’ (at square 5X6). This is the square that we want our pichu to navigate to in the shortest possible path 
@@ -49,7 +49,7 @@ a.	All the possible maps where an agent could be placed
 i.	In this scenario, our set of states would be all different maps where our pichu/pichu could take a position legally i.e., no other pichu is in the same row, same column and same diagonal
 #### 2)	Initial State S0:
 a.	The map that was given in the in the initial state, where p is in the cell (5,0) and only one agent is in the map
-#### 3)	A function of SUCC: S  encodes possible transitions of the system
+#### 3)	A function of SUCC: S --> encodes possible transitions of the system
 a.	For a given map where the pichu/pichu’s are at, the successor function gives all the maps where an additional pichu could be placed legally 
 #### 4)	Set of Goal States:
 a.	Here we may or may not have more than one goal states, it could also be a case where there is no goal state i.e., We can’t arrange the given number of pichu’s without seeing them each other 
