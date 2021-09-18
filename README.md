@@ -11,7 +11,7 @@ Assignment 0 (Elements of Artificial Intelligence)
 a.	All the possible states are the positions our pichu could take
 i.	In this scenario, our set of states would be all different nodes where our pichu could take a position legally (‘.’,’@’,’p’)
 ##### 2)	Initial State S0:
-a.	The node that was given in the in the initial state, where pichu is in the cell or square (5,0) 
+a.	The node that was given in the initial state, in this case where pichu is in the cell or square (5,0) 
 ##### 3)	A function of SUCC: S   encodes possible transitions of the system
 a.	For a given cell where a pichu is at, the successor function gives all the possible squares our pichu can legally move in all compass directions (N, S, E & W) or (L, R, D, and U for left, right, down, and up) 
 #### 4)	Set of Goal States:
