@@ -29,14 +29,14 @@ Algorithm that worked for me is implemented using Breadth First Search where fro
 
 Reaching from Initial state to the Goal State:
 *	First, I check all the nodes that are at a distance of 1
-•	Then I check all the nodes that are at a distance of 2 and so on 
-•	However, I achieved this mechanism using a list that has all the visited nodes. I’m aware that this will create some overhead, But I was not able apply BFS without using a list of visited nodes
-•	Also, this will definitely give me a solution which is also optimal, because I am checking all the nodes in a systematic manner (this is what we expect from BFS)
+*	Then I check all the nodes that are at a distance of 2 and so on 
+*	However, I achieved this mechanism using a list that has all the visited nodes. I’m aware that this will create some overhead, But I was not able apply BFS without using a list of visited nodes
+*	Also, this will definitely give me a solution which is also optimal, because I am checking all the nodes in a systematic manner (this is what we expect from BFS)
 Obtaining Path for the Optimal Solution:
-•	I obtained the path from initial state to the goal state by making a small change to the existing fringe where I capture the path from initial node to the goal node (or any node that I visit during the navigation) that is being inserted into the fringe.
-o	Suppose I move from (5,0) to (4,0) that is move “U”, So my node (4,0) from the initial state could be reached by moving in the “U” direction
-o	And now when I move from (4,0) to (3,0), that is also again “U”. Now I add this to the existing path. So it will be “U” + ”U”. So, by moving in the direction of “UU” we will reach the node (3,0) from the initial node 
-o	By repeating this process for all the nodes, we will get the path from initial state to the goal state
+*	I obtained the path from initial state to the goal state by making a small change to the existing fringe where I capture the path from initial node to the goal node (or any node that I visit during the navigation) that is being inserted into the fringe.
+	*	Suppose I move from (5,0) to (4,0) that is move “U”, So my node (4,0) from the initial state could be reached by moving in the “U” direction
+	*	And now when I move from (4,0) to (3,0), that is also again “U”. Now I add this to the existing path. So it will be “U” + ”U”. So, by moving in the direction of “UU” we will reach the node (3,0) from the initial node 
+	*	By repeating this process for all the nodes, we will get the path from initial state to the goal state
 
 ## Problem 2:Arrange Pichus
 ### Abstraction:
@@ -54,8 +54,8 @@ a.	The cost of successor for the given state is again 1(or same) for all the suc
 
 
 About the algorithm, we are using the Depth First Search Algorithm here with a couple of assumptions
-•	The first pichu is fixed in its location 
-•	The position of agent (‘@’) is also fixed and is considered equivalent to “X” if an agent is obscuring the view between two pichu’s
+*	The first pichu is fixed in its location 
+*	The position of agent (‘@’) is also fixed and is considered equivalent to “X” if an agent is obscuring the view between two pichu’s
 For this particular logic, I think this will give solution for whatever map we give (of course ignoring the time constraints) because we are searching the entire state space and I think logic is in such a way that it may not get caught in the loops. 
 The successor function will return all the maps where we can add one more pichu legally than the number of pichu’s in the given map.   
 The logic to check whether a given square is legal to place a pichu is as follows:
