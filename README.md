@@ -52,17 +52,18 @@ a.	Here we may or may not have more than one goal states, it could also be a cas
 #### 5)	A cost function that calculates how expensive a successor is
 a.	The cost of successor for the given state is again 1(or same) for all the successors because for all the possible maps we add new pichu to those maps. Adding a new pichu at a given location of the map (or  a 2-D list) is constant and is same  as to add a new pichu at other locations
 
-
+#### Algorithm:
 About the algorithm, we are using the Depth First Search Algorithm here with a couple of assumptions
 *	The first pichu is fixed in its location 
 *	The position of agent (‘@’) is also fixed and is considered equivalent to “X” if an agent is obscuring the view between two pichu’s
+
 For this particular logic, I think this will give solution for whatever map we give (of course ignoring the time constraints) because we are searching the entire state space and I think logic is in such a way that it may not get caught in the loops
 
 * The successor function will return all the maps where we can add one more pichu legally than the number of pichu’s in the given map.   
 	* The logic to check whether a given square is legal to place a pichu is as follows:
 		* From the given square which is “.” We move in all 8 directions that are N, E, S, W, NE, NW, SE, SW.  and for any one of these 8 directions if we meet a pichu before an obstacle” X” or “@”, or meet a pichu before we reach the end of the map (i.e. we can’t proceed any further in that direction) then that square is NOT LEGAL to insert a new pichu. In case we don’t meet any pichu in any of these 8 directions then that square is LEGAL to insert a new pichu.
 
-	* The only problem with this approach could be since it is a blind search if we have bigger map, then we may have a much bigger branching factor and we may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with the bigger maps without running the codes for a longer time.
+* The only problem with this approach could be since it is a blind search if we have bigger map, then we may have a much bigger branching factor and we may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with the bigger maps without running the codes for a longer time.
 
 
 
