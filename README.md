@@ -8,16 +8,16 @@ Assignment 0 (Elements of Artificial Intelligence)*
 ###  Abstraction:
 
 #### 1)	Set of States 
-a.	All the possible states are the positions our pichu could take
+a.	Set of states are all the possible positions our pichu could take
 i.	In this scenario, our set of states would be all different nodes where our pichu could take a position legally (‘.’,’@’,’p’)
 ##### 2)	Initial State S0:
-a.	The node that was given in the initial state, in this case where pichu is in the cell or square (5,0) 
+a.	The node that was given in the initial state, in the case of map1 it is the cell or square (5,0) where our pichu is 
 ##### 3)	A function of SUCC: S -->  encodes possible transitions of the system
 a.	For a given cell where a pichu is at, the successor function gives all the possible squares our pichu can legally move in all compass directions (N, S, E & W) or (L, R, D, and U for left, right, down, and up) 
 #### 4)	Set of Goal States:
-a.	Here we have only one goal state which is ‘@’ (at square 5X6). This is the square that we want our pichu to navigate to in the shortest possible path 
+a.	Here we have only one goal state which is ‘@’ (at square 5X6 for map1). This is the square that we want our pichu to navigate to in the shortest possible path 
 #### 5)	A cost function that calculates how expensive a successor is
-a.	For the given conditions, a move can only happen in one of four compass directions. And the cost is same and is 1 for moving from the given square to one of the adjacent squares. And finally, the cost function gives the cost from initial state to the goal states
+a.	For the given conditions, a move can only happen in one of the four compass directions. And the cost is same and is 1 for moving from the given square to one of the adjacent squares. And finally, the cost function gives the cost from initial state to the goal states
 i.	E.g., If a solution has a cost of 5 means that our pichu must move 5 times from the initial state to reach to the goal state  
 
 
