@@ -21,7 +21,7 @@ a.	For the given conditions, a move can only happen in one of four compass direc
 i.	E.g., If a solution has a cost of 5 means that our pichu must move 5 times from the initial state to reach to the goal state  
 
 
-#### Algorithm 
+### Algorithm 
 
 Let’s talk about the algorithm, here we are making use of fringe data structure (using stack) to solve the problem:
 	The algorithm is often giving us the wrong solution because it is getting caught in an infinite loop and this loop is occurring at the cells (2,2) and (2,3). After a certain point, our agent is only oscillating between these two squares (because our fringe is guiding the agent to do so). Since we are using a stack here, I think we are applying Depth First Search which is not a complete algorithm i.e. It does not guarantee a solution even if one exists.
@@ -56,7 +56,7 @@ a.	Here we may or may not have more than one goal states, it could also be a cas
 #### 5)	A cost function that calculates how expensive a successor is
 a.	The cost of successor for the given state is again 1(or same) for all the successors because for all the possible maps we add new pichu to those maps. Adding a new pichu at a given location of the map (or  a 2-D list) is constant and is same  as to add a new pichu at other locations
 
-#### Algorithm:
+### Algorithm:
 About the algorithm, we are using the Depth First Search Algorithm here with a couple of assumptions:
 *	The first pichu is fixed in its location 
 *	The position of agent (‘@’) is also fixed and is considered equivalent to “X” if an agent is obscuring the view between two pichu’s
