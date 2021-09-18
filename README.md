@@ -46,7 +46,7 @@ Obtaining Path for the Optimal Solution
 ### Abstraction:
 #### 1)	Set of States 
 a.	All the possible maps where an agent could be placed
-i.	In this scenario, our set of states would be all different maps where our pichu/pichu could take a position legally i.e., no other pichu is in the same row, same column and same diagonal
+i.	In this scenario, our set of states would be all different maps where our pichu/pichus could take a position legally i.e., no other pichu is in the same row, same column and same diagonal
 #### 2)	Initial State S0:
 a.	The map that was given in the in the initial state, where p is in the cell (5,0) and only one agent is in the map
 #### 3)	A function of SUCC: S --> encodes possible transitions of the system
