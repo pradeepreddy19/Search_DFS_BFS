@@ -65,7 +65,7 @@ For this particular logic, I think this will give solution for whatever map we g
 
 #### What could be improved
 
-The only problem with this approach could be since it is a blind search if we have bigger map, then we may have a much bigger branching factor and we may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with the bigger maps without running the codes for a longer time.
+The only problem with this approach could be, since it is a blind search strategy if we have a bigger map, then we may have a much bigger branching factor and may take a very long time to arrive at the solution. Probably, if we can get a heuristic function which can efficiently search the map then we can deal with bigger maps without running the codes for a longer time.
 
 
 
